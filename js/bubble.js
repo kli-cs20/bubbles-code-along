@@ -16,6 +16,16 @@ function newRandomBubble() {
     };
 }
 
+// Create and return an array with 'total' bubble objects
+function createRandomBubbleArray(total) {
+    // Create a temporary array so it doesn't rely on a global variable (bubbles)
+    let temp = [];
+    for (let n = 1; n <= total; n++) {
+        temp.push(newRandomBubble());
+    }
+    return temp;
+}
+
 function drawBubble(aBubble) {
     stroke(aBubble.color);
     circle(aBubble.x, aBubble.y, aBubble.r, "stroke");

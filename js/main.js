@@ -5,10 +5,8 @@ cnv.width = 800;
 cnv.height = 600;
 
 // Create an array of random bubble objects
-let bubbles = [];
-for (let n = 1; n <= 100; n++) {
-    bubbles.push(newRandomBubble());
-}
+let bubbles = createRandomBubbleArray(100);
+console.log(bubbles);
 
 requestAnimationFrame(draw);
 function draw() {
@@ -25,5 +23,6 @@ function draw() {
     requestAnimationFrame(draw);
 }
 
+// EVENTS
 
 
