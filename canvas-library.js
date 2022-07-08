@@ -31,17 +31,17 @@ function line(x1, y1, x2, y2) {
     ctx.stroke();
 }
 
-// function circle(x, y, r, mode) {
-//     if (mode === "fill") {
-//         ctx.beginPath();
-//         ctx.arc(x, y, r, 0, 2 * Math.PI);
-//         ctx.fill();
-//     } else if (mode === "stroke") {
-//         ctx.beginPath();
-//         ctx.arc(x, y, r, 0, 2 * Math.PI);
-//         ctx.stroke();
-//     }
-// }
+function circle(x, y, r, mode) {
+    if (mode === "fill") {
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, 2 * Math.PI);
+        ctx.fill();
+    } else if (mode === "stroke") {
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, 2 * Math.PI);
+        ctx.stroke();
+    }
+}
 
 function triangle(x1, y1, x2, y2, x3, y3, mode) {
     if (mode === "fill") {
