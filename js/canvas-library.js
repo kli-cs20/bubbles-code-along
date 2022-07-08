@@ -1,4 +1,11 @@
 // Canvas Functions
+// Requires global cnv and ctx variables
+
+// Fill the canvas with provide color
+function background(color) {
+    fill(color);
+    rect(0, 0, cnv.width, cnv.height, "fill");
+}
 
 function stroke(color) {
     ctx.strokeStyle = color;

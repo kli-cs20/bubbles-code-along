@@ -12,9 +12,8 @@ for (let n = 1; n <= 100; n++) {
 
 requestAnimationFrame(draw);
 function draw() {
-    // Clear Canvas
-    fill("black");
-    rect(0, 0, cnv.width, cnv.height, "fill");
+    // Fill Canvas
+    background("black");
 
     // Move and Draw Bubbles
     for (let i = 0; i < bubbles.length; i++) {
