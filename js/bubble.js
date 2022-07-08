@@ -1,3 +1,5 @@
+// BUBBLE FUNCTIONS
+
 function newBubble(initX, initY, initR, initColor) {
     return {
         x: initX,
@@ -34,4 +36,9 @@ function drawBubble(aBubble) {
 function moveBubble(aBubble) {
     aBubble.x += randomInt(-3, 4);
     aBubble.y += randomInt(-3, 4);
+}
+
+// Add bubble on mouse cursor coordinates
+function addBubble() {
+    bubbles.push(newBubble(mouseX, mouseY, 30, randomRGB()));
 }

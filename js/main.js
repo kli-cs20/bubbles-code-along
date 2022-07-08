@@ -5,8 +5,7 @@ cnv.width = 800;
 cnv.height = 600;
 
 // Create an array of random bubble objects
-let bubbles = createRandomBubbleArray(100);
-console.log(bubbles);
+let bubbles = [];
 
 requestAnimationFrame(draw);
 function draw() {
@@ -19,10 +18,38 @@ function draw() {
         drawBubble(bubbles[i]);
     }
 
-
+    // loop draw function
     requestAnimationFrame(draw);
 }
 
 // EVENTS
+document.addEventListener("keydown", keydownHandler);
+document.addEventListener("mousemove", mousemoveHandler)
 
+
+function keydownHandler(e) {
+    if (e.keyCode === 39) {
+        // Right Arrow Key adds new bubble
+        // bubbles.push(newRandomBubble());
+        bubbles.push(newBubble(400, 300, 30, randomRGB()));
+    } else if (e.keyCode === 37) {
+        // Left arrow key takes away bubble
+        bubbles.pop();
+    } else if (e.keyCode === 32) {
+        // Space key creates bubble on mouse
+        addBubble();
+    }
+}
+
+// Mouse Varibles
+let mouseX, mouseY;
+function mousemoveHandler(e) {
+    // Update mouseX and mouseY
+    let cnvRect = cnv.getBoundingClientRect();
+    mouseX = e.x - cnvRect.x;
+    mouseY = e.y - cnvRect.y;
+}
+
+// Timers
+setInterval(addBubble, 1000); // Every second
 
